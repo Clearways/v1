@@ -17,6 +17,7 @@ app.post('/configuration/', (req, res) => {
   });
 
 app.use(express.static(FilePath));
+app.use("/config/", express.static('config.json'));
 app.use(express.static(FilePath));
 const bareServer = createBareServer(BareDirectory);
 
