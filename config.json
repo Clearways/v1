@@ -1,5 +1,4 @@
 {
 	"isRammerheadEnabled": false,
-    "isNodeUnblockerEnabled": false,
-    "useWispServer": false
+    "isNodeUnblockerEnabled": false
 }
