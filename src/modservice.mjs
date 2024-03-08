@@ -1,6 +1,5 @@
 import { argv } from 'process';
-import { exec } from 'child_process';
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
 
 if (argv.length <= 2) {
   console.log('No extra commands provided. Exiting... (Use npm/pnpm run modservice help for Assistance)');
@@ -27,8 +26,15 @@ function help() {
   console.log('*modservice version -- Gets the version');
 }
 
-function HWID() {
-  exec('Loading!');
+async function resetboot() {
+  try {
+    const data = await readFile('./src/archive/bootstrap.gitkeep', 'utf8');
+    console.log(`✅ Reset Boot has been requested!\n----------------------------\n${data}`);
+    await writeFile('./src/index.mjs', data);
+    console.log('Data written to index.mjs successfully!');
+  } catch (error) {
+    console.error('Error reading or writing file:', error);
+  }
 }
 
 async function version() {
