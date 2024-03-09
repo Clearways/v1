@@ -1,5 +1,5 @@
 // Module Import //
-import { createBareServer } from '@tomphttp/bare-server-node';
+import { createBareServer } from 'bypass-bare';
 import http from 'node:http';
 import express from 'express';
 import { hostname } from "node:os";
