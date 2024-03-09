@@ -199,3 +199,42 @@ border: 2px #373737 solid;
   -webkit-user-select: none;
   font-size: 35px;
 }
+
+
+.BrowserActionMenu {
+  position: fixed;
+  top: 9%;
+  display: none;
+  align-items: center;
+  left: 18%;
+  flex-direction: column;
+  transform: translateX(-50%);
+  z-index: 9998;
+  width: 230px;
+  height: 350px;
+  background-color: rgb(23, 23, 23);
+  border-radius: 8px;
+}
+
+.BrowserActionMenu button {
+  width: 215px;
+  height: 43px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  background-color: transparent;
+}
+
+.BrowserActionMenu button:hover {
+  background-color: rgb(37, 37, 37);
+}
+
+.BrowserActionMenu span {
+  margin-right: 8px;
+  font-weight: 100;
+}

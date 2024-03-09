@@ -6,7 +6,10 @@
 <body>
         <div class="BrowserBeginPart">
             <a id="More">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" onclick="
+                    var actionM = document.getElementById('ActionM');
+actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
+                    ">
                     more_vert
                     </span>
             </a>
@@ -32,6 +35,16 @@
                     </span>
             </a>
         </div>
+        <div class="BrowserActionMenu" id="ActionM">
+            <button><span class="material-symbols-outlined"> refresh </span>Reload Page</button>
+            <button><span class="material-symbols-outlined"> home </span>Home</button>
+            <button><span class="material-symbols-outlined"> build </span>Fix NowGG</button>
+            <button><span class="material-symbols-outlined"> fullscreen </span>Fullscreen</button>
+            <button><span class="material-symbols-outlined"> javascript </span>Inject JavaScript</button>
+            <button><span class="material-symbols-outlined"> code </span>Inspect Element</button>
+            <button><span class="material-symbols-outlined"> hide </span>Hide Topbar</button>   
+        </div>
+        <div class="BrowserBG"></div>
         <iframe src="homepage.html" class="BrowserFrame"></iframe>
         <script src="js/TabModule.js"></script>
 </body>
