@@ -44,6 +44,27 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
             <button><span class="material-symbols-outlined"> code </span>Inspect Element</button>
             <button><span class="material-symbols-outlined"> hide </span>Hide Topbar</button>   
         </div>
+
+        <div class="TabManagement" style="display: none;">
+            <div class="TabManagementTopBar">
+                <p>Tab Manager</p>
+                <button class="TabManagementXButton">
+                    X
+                </button>
+                
+            </div>
+            <div class="TabHold" id="TabHold">
+                <div class="TabPiece">
+                    <div class="Tabadab">
+                        <p style="margin-left: 5px;">Tab 1</p>
+                        <button class="TabManagementXButton">
+                            X
+                        </button>
+                    </div>
+                    <div class=""></div>
+                </div>
+            </div>
+        </div>
         <div class="BrowserBG"></div>
         <iframe src="homepage.html" class="BrowserFrame"></iframe>
         <script src="js/TabModule.js"></script>

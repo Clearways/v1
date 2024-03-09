@@ -5,12 +5,13 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  font-family: "Montserrat", sans-serif;
   height: 100vh;
 }
 
 .BrowserBeginPart {
   position: fixed;
-  top: 1%;
+  top: 0.3%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
@@ -56,7 +57,7 @@ body {
 }
 .BrowserFrame {
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   border: none;
 }
 
@@ -237,4 +238,78 @@ border: 2px #373737 solid;
 .BrowserActionMenu span {
   margin-right: 8px;
   font-weight: 100;
+}
+
+.BrowserBG {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+}
+
+.TabManagement {
+  position: fixed;
+  top: 10%;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  flex-direction: column;
+  transform: translateX(-50%);
+  z-index: 9995;
+  width: 80%;
+  height: 600px;
+  background-color: rgb(23, 23, 23);
+  border-radius: 8px;
+}
+
+.TabManagementTopBar {
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+}
+
+.TabManagementTopBar p {
+  color: white;
+  margin-left: 15px;
+}
+
+.TabManagementXButton {
+  width: 35px;
+  border: none;
+  background-color: #545454;
+  border-radius: 300px;
+  margin-left: auto;
+  margin-right: 5px;
+  color: white;
+  height: 35px;
+}
+
+.TabHold {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.TabPiece {
+  width: 220px;
+  height: 150px;
+  border-radius: 8px;
+  background-color: #212121;
+}
+
+.Tabadab {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  background-color: #2f2f2f;
+  border-top-left-radius: 8px;
+  color: white;
+  align-items: center;
+  border-top-right-radius: 8px;
 }
