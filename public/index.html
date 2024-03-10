@@ -23,7 +23,9 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
                     arrow_forward
                     </span>
             </a>
-            <input type="text" placeholder="Search the Web" class="geek"></input>
+            <form id="searchway">
+                <input type="text" placeholder="Search the Web" class="geek" id="searchway_input"></input>
+            </form>
             <a id="add" onclick="tabModule.NewTab()">
                 <span class="material-symbols-outlined">
                     add
@@ -36,11 +38,11 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
             </a>
         </div>
         <div class="BrowserActionMenu" id="ActionM">
-            <button><span class="material-symbols-outlined"> refresh </span>Reload Page</button>
-            <button><span class="material-symbols-outlined"> home </span>Home</button>
+            <button id="refreshbutton"><span class="material-symbols-outlined"> refresh </span>Reload Page</button>
+            <button id="homepage"><span class="material-symbols-outlined"> home </span>Home</button>
             <button><span class="material-symbols-outlined"> build </span>Fix NowGG</button>
-            <button><span class="material-symbols-outlined"> fullscreen </span>Fullscreen</button>
-            <button><span class="material-symbols-outlined"> javascript </span>Inject JavaScript</button>
+            <button id="fullscreen"><span class="material-symbols-outlined"> fullscreen </span>Fullscreen</button>
+            <button id="javascript_"><span class="material-symbols-outlined"> javascript </span>Inject JavaScript</button>
             <button><span class="material-symbols-outlined"> code </span>Inspect Element</button>
             <button><span class="material-symbols-outlined"> hide </span>Hide Topbar</button>   
         </div>
@@ -78,5 +80,8 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
         -->
         <script src="js/TabModule.js"></script>
         <script src="js/BasicPageFunctions.js"></script>
+        <script src="js/search-module.js"></script>
+        <script src="build/bundle.js" defer></script>
+        <script src="build/config.js" defer></script>
 </body>
 </html>

@@ -57,7 +57,3 @@
     }
   };
   
-
-  document.body.onload = function () {
-    tabModule.NewTab()
-  }
