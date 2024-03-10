@@ -24,7 +24,7 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
                     </span>
             </a>
             <input type="text" placeholder="Search the Web" class="geek"></input>
-            <a id="add">
+            <a id="add" onclick="tabModule.NewTab()">
                 <span class="material-symbols-outlined">
                     add
                     </span>
@@ -54,6 +54,7 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
                 
             </div>
             <div class="TabHold" id="TabHold">
+            <!--
                 <div class="TabPiece">
                     <div class="Tabadab">
                         <p style="margin-left: 5px;">Tab 1</p>
@@ -64,19 +65,10 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
                     <div class="TabIMG">
                         <img src="image/TabADF.png">
                     </div>
-                    <div class="TabPiece">
-                        <div class="Tabadab">
-                            <p style="margin-left: 5px;">Tab 1</p>
-                            <button class="TabManagementXButton">
-                                X
-                            </button>
-                        </div>
-                        <div class="TabIMG">
-                            <img src="image/TabADF.png">
-                        </div>
-                </div>
+            </div>
+            -->
                <div class="AddButton" id="AddButton">
-                    <img src="image/add.png">
+                    <img src="image/add.png" onclick="tabModule.NewTab()">
                </div>
             </div>
         </div>
