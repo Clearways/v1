@@ -48,7 +48,7 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
         <div class="TabManagement"  id="tabmanagerc" style="display: none;">
             <div class="TabManagementTopBar">
                 <p>Tab Manager</p>
-                <button class="TabManagementXButton">
+                <button class="TabManagementXButton" id="XB">
                     X
                 </button>
                 
@@ -62,13 +62,29 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
                         </button>
                     </div>
                     <div class="TabIMG">
-                        <img src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png">
+                        <img src="image/TabADF.png">
                     </div>
+                    <div class="TabPiece">
+                        <div class="Tabadab">
+                            <p style="margin-left: 5px;">Tab 1</p>
+                            <button class="TabManagementXButton">
+                                X
+                            </button>
+                        </div>
+                        <div class="TabIMG">
+                            <img src="image/TabADF.png">
+                        </div>
                 </div>
+               <div class="AddButton" id="AddButton">
+                    <img src="image/add.png">
+               </div>
             </div>
         </div>
         <div class="BrowserBG"></div>
-        <iframe src="homepage.html" class="BrowserFrame"></iframe>
+        <!--
+            <iframe src="homepage.html" class="BrowserFrame"></iframe>
+        -->
         <script src="js/TabModule.js"></script>
+        <script src="js/BasicPageFunctions.js"></script>
 </body>
 </html>

@@ -1,11 +1,6 @@
 //tabService
 let TabCounter = 0
+const TabDividend = document.getElementById('TabHold')
 function NewTab() {
     TabCounter + 1
-}
-
-
-document.getElementById('TabHolder').onclick = function () {
-    var TBMGR = document.getElementById('tabmanagerc');
-    TBMGR.style.display = TBMGR.style.display === 'flex' ? 'none' : 'flex';
 }
