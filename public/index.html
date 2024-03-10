@@ -2,6 +2,14 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="icon" type="image/png" href="https://ssl.gstatic.com/classroom/favicon.png">
+    <script>
+        window.addEventListener('beforeunload', function(e) {
+      e.preventDefault();
+      e.returnValue = '';
+    });
+      </script>
+    <title>Home</title>
 </head>
 <body>
         <div class="BrowserBeginPart">
@@ -40,10 +48,10 @@ actionM.style.display = actionM.style.display === 'flex' ? 'none' : 'flex';
         <div class="BrowserActionMenu" id="ActionM">
             <button id="refreshbutton"><span class="material-symbols-outlined"> refresh </span>Reload Page</button>
             <button id="homepage"><span class="material-symbols-outlined"> home </span>Home</button>
-            <button><span class="material-symbols-outlined"> build </span>Fix NowGG</button>
+            <button id="ngg"><span class="material-symbols-outlined"> build </span>Fix NowGG</button>
             <button id="fullscreen"><span class="material-symbols-outlined"> fullscreen </span>Fullscreen</button>
             <button id="javascript_"><span class="material-symbols-outlined"> javascript </span>Inject JavaScript</button>
-            <button><span class="material-symbols-outlined"> code </span>Inspect Element</button>
+            <button id="inspectelement"><span class="material-symbols-outlined"> code </span>Inspect Element</button>
             <button><span class="material-symbols-outlined"> hide </span>Hide Topbar</button>   
         </div>
 

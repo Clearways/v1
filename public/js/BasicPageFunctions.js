@@ -39,7 +39,21 @@ document.getElementById('searchway').addEventListener("submit", async (event) =>
     TabIframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
   });
 
+document.getElementById('Back').onclick = function () {
+  const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);
+    const TabDocument = TabIframe.contentDocument;
+    const Script = TabDocument.createElement('script');
+    Script.textContent = "window.history.back()";
+    TabDocument.body.appendChild(Script);
+}
 
+document.getElementById('Forward').onclick = function () {
+  const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);
+    const TabDocument = TabIframe.contentDocument;
+    const Script = TabDocument.createElement('script');
+    Script.textContent = "window.history.forward()";
+    TabDocument.body.appendChild(Script);
+}
 
   function worker() {
     const SW = '../system-sw.js';
@@ -63,6 +77,24 @@ document.getElementById('searchway').addEventListener("submit", async (event) =>
         console.log('Service workers are not supported in this browser.');
       }
 }
+
+document.getElementById('ngg').onclick = function () {
+  const ScriptURL = 'https://cdn.jsdelivr.net/gh/rxfe-a/aria-vercel-deploy@master/public/external/js/nowgg-patcher.js';
+  const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);
+    const TabDocument = TabIframe.contentDocument;
+    const Script = TabDocument.createElement('script');
+    Script.src = ScriptURL;
+    TabDocument.body.appendChild(Script);
+}
+
+document.getElementById('inspectelement').onclick = function () {
+  const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);
+    const TabDocument = TabIframe.contentDocument;
+    const Script = TabDocument.createElement('script');
+    Script.textContent = `javascript:(function () { var script = document.createElement('script'); script.src="https://cdn.jsdelivr.net/npm/eruda"; document.body.append(script); script.onload = function () { eruda.init(); } })();`;
+    TabDocument.body.appendChild(Script);
+}
+
 
 document.body.onload = function () {
     worker()
