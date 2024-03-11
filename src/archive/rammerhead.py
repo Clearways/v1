@@ -4,6 +4,7 @@ import http from 'node:http';
 import express from 'express';
 import createRammerhead from "rammerhead/src/server/index.js";
 import { fileURLToPath } from "node:url";
+import { dynamicPath } from "@nebula-services/dynamic";
 import { hostname } from "node:os";
 
 // Configuration //
@@ -59,6 +60,7 @@ app.post('/configuration/', (req, res) => {
   });
 
 app.use(express.static(FilePath));
+app.use("/dynamic/", express.static(dynamicPath));
 const bareServer = createBareServer(BareDirectory);
 
 httpServer.on('request', (req, res) => {

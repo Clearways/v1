@@ -4,6 +4,7 @@ import http from 'node:http';
 import Unblocker from "unblocker";
 import express from 'express';
 import { hostname } from "node:os";
+import { dynamicPath } from "@nebula-services/dynamic";
 // Configuration //
 
 const FilePath = './public';
@@ -21,6 +22,7 @@ app.use(express.static(FilePath));
 app.use("/config/", express.static('config.json'));
 app.use(express.static(FilePath));
 var unblocker = new Unblocker({prefix: '/webinstance/'});
+app.use("/dynamic/", express.static(dynamicPath));
 app.use(unblocker);
 const bareServer = createBareServer(BareDirectory);
 

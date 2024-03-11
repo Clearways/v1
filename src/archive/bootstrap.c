@@ -2,6 +2,7 @@
 import { createBareServer } from 'bypass-bare';
 import http from 'node:http';
 import express from 'express';
+import { dynamicPath } from "@nebula-services/dynamic";
 import { hostname } from "node:os";
 // Configuration //
 
@@ -19,6 +20,7 @@ app.post('/configuration/', (req, res) => {
 app.use(express.static(FilePath));
 app.use("/config/", express.static('config.json'));
 app.use(express.static(FilePath));
+app.use("/dynamic/", express.static(dynamicPath));
 const bareServer = createBareServer(BareDirectory);
 
 httpServer.on('request', (req, res) => {
