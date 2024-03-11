@@ -154,6 +154,7 @@ window.addEventListener("error", setError);
             setError();
             api.newsession().then((id) => {
                 addSession(id);
+                this.localStorage.setItem('rh_default', id)
                 document.getElementById("session-id").value = id;
                 document.getElementById("session-httpproxy").value = "";
             });
