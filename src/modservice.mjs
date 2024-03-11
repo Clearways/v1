@@ -67,7 +67,7 @@ async function OverrideRHBootSector() {
     await writeFile('./src/index.mjs', data);
     console.log('Data written to index.mjs successfully!');
     const config = {
-      isRammerheadEnabled: false,
+      isRammerheadEnabled: true,
       isNodeUnblockerEnabled: false
     };
     const jsonConfig = JSON.stringify(config, null, 2);

@@ -1,7 +1,7 @@
 importScripts("/build/bundle.js"), importScripts("/build/config.js");
 class UVServiceWorker extends EventEmitter {
     constructor(e = __uv$config) {
-        super(), e.bare || (e.bare = "/api/"), this.addresses = "string" == typeof e.bare ? [new URL(e.bare, location)] : e.bare.map((e => new URL(e, location))), this.headers = {
+        super(), e.bare || (e.bare = "/acesspoint/"), this.addresses = "string" == typeof e.bare ? [new URL(e.bare, location)] : e.bare.map((e => new URL(e, location))), this.headers = {
             csp: ["cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-resource-policy", "content-security-policy", "content-security-policy-report-only", "expect-ct", "feature-policy", "origin-isolation", "strict-transport-security", "upgrade-insecure-requests", "x-content-type-options", "x-download-options", "x-frame-options", "x-permitted-cross-domain-policies", "x-powered-by", "x-xss-protection"],
             forward: ["accept-encoding", "connection", "content-length"]
         }, this.method = {

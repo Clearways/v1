@@ -130,6 +130,30 @@
         background-size: 100%;
          transition: background 0s;
         }
+
+        button {
+            width: 425px;
+            height: 40px;
+            transition: background 0.4s;
+            border: none;
+            background-color: rgb(34, 33, 33);
+            margin-top: 5px;
+            margin-left: 8px;
+            border-radius: 8px;
+            font-family: "Montserrat", sans-serif;
+            color: white;
+        }
+
+        button:hover {
+            background: rgb(52, 50, 50) radial-gradient(circle, transparent 1%, rgb(67, 64, 64) 1%) center/15000%;
+        }
+
+
+        button:active {
+            background-color: #2c2c2c;
+        background-size: 100%;
+         transition: background 0s;
+        }
     </style>
 </head>
 <body>
@@ -159,12 +183,20 @@
                 <h1 style="margin-left: 5px;">Proxy Selector</h1>
                 <div style="width: 400px; height: 5px; background-color: rgb(67, 67, 67); border-radius: 250px; margin-left: 5px;"></div>
                 <p style="margin-left: 5px;">Select your Proxy from the list</p>
-                <div style="width: 650px; height: 125px; background-color: rgb(34, 34, 34); border-radius: 8px; margin-left: 5px;">
+                <div style="width: 650px; height: 125px; background-color: rgb(34, 34, 34); border-radius: 8px; margin-left: 5px; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 15px;">
                     <input type="text" style="display: none;" id="ProxySelection">
-                    <img alt="Dyn">
+                    <img alt="Dynamic" id="Dynamic" src="build/images/Dynamic.png" style="width: 110px; height: 110px; background-color: rgb(26, 26, 26); border-radius: 5px;">
+                    <img alt="Rammerhead" id="Rammerhead" src="build/images/Rammerhead.png" style="width: 110px; height: 110px; background-color: rgb(26, 26, 26); border-radius: 5px;">
+                    <img alt="Ultraviolet" id="Ultraviolet" src="build/images/Ultraviolet.png" style="width: 110px; height: 110px; background-color: rgb(26, 26, 26); border-radius: 5px;">
+                    <img alt="Node" id="Node" src="build/images/node.png" style="width: 110px; height: 110px; background-color: rgb(26, 26, 26); border-radius: 5px;">
                 </div>
+                <h1>Open Method</h1>
+                <button id="open">Open in Browser</button>
+                <button id="ab">Open in AB Cloak</button>
+                <button id="direct">Open Directly </button>
             </div>
         </div>
     </div>  
+    <script src="js/settings.js"></script>
 </body>
 </html>

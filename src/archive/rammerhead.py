@@ -9,7 +9,7 @@ import { hostname } from "node:os";
 // Configuration //
 
 const FilePath = './public';
-const BareDirectory = '/api/';
+const BareDirectory = '/acesspoint/';
 const DefaultPort = 8080;
 const app = express();
 const rh = createRammerhead();
