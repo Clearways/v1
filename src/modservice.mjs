@@ -57,7 +57,18 @@ function install_rh() {
 async function OverrideRHBootSector() {
   try {
     const data = await readFile('./src/archive/rammerhead.gitkeep', 'utf8');
-    console.log(`✅ Installing Rammerhead!\n----------------------------\n${data}`);
+    console.log(`✅ Installing Rammerhead!\n----------------------------\n`);
+    await writeFile('./src/index.mjs', data);
+    console.log('Data written to index.mjs successfully!');
+  } catch (error) {
+    console.error('Error reading or writing file:', error);
+  }
+}
+
+async function OverrideNUBootSector() {
+  try {
+    const data = await readFile('./src/archive/nodeunblocker.gitkeep', 'utf8');
+    console.log(`✅ Installing NodeUnblocker!\n----------------------------\n`);
     await writeFile('./src/index.mjs', data);
     console.log('Data written to index.mjs successfully!');
   } catch (error) {
@@ -101,4 +112,16 @@ function remove_rh_session(Session) {
         }
         console.log(`Session "${Session}" deleted successfully.`);
     });
+}
+
+function install_nodeunblocker() {
+  try {
+    const nodeunblocker = require.resolve('unblocker');
+    OverrideNUBootSector()
+    console.log('--> Overriding')
+} catch (error) {
+    exec('npm install unblocker')
+    console.log('--> NodeUnblocker not Detected! Auto installing')
+    OverrideNUBootSector()
+}
 }
