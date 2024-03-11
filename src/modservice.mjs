@@ -33,7 +33,7 @@ function help() {
 
 async function resetboot() {
   try {
-    const data = await readFile('./src/archive/bootstrap.gitkeep', 'utf8');
+    const data = await readFile('./src/archive/bootstrap.c', 'utf8');
     console.log(`✅ Reset Boot has been requested!\n----------------------------\n${data}`);
     await writeFile('./src/index.mjs', data);
     console.log('Data written to index.mjs successfully!');
@@ -56,7 +56,7 @@ function install_rh() {
 
 async function OverrideRHBootSector() {
   try {
-    const data = await readFile('./src/archive/rammerhead.gitkeep', 'utf8');
+    const data = await readFile('./src/archive/rammerhead.py', 'utf8');
     console.log(`✅ Installing Rammerhead!\n----------------------------\n`);
     await writeFile('./src/index.mjs', data);
     console.log('Data written to index.mjs successfully!');
@@ -67,7 +67,7 @@ async function OverrideRHBootSector() {
 
 async function OverrideNUBootSector() {
   try {
-    const data = await readFile('./src/archive/nodeunblocker.gitkeep', 'utf8');
+    const data = await readFile('./src/archive/nodeunblocker.asm', 'utf8');
     console.log(`✅ Installing NodeUnblocker!\n----------------------------\n`);
     await writeFile('./src/index.mjs', data);
     console.log('Data written to index.mjs successfully!');
