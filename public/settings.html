@@ -6,7 +6,9 @@
         body {
             margin: 0;
             font-family: "Montserrat", sans-serif;
+            color: white;
             padding: 0;
+            height: 100vh;
             background-color: rgb(15, 15, 15);
             display: flex;
             flex-direction: column;
@@ -15,7 +17,6 @@
         .SettingTopBar {
             width: 100%;
             height: 56px;
-            background-color: rgb(23, 23, 23);
             display: flex;
             align-items: center;
         }
@@ -44,6 +45,79 @@
             user-select: none;
             -webkit-user-select: none;
         }
+
+        .homeicon {
+            width: 45px;
+            height: 45px;
+            color: rgb(167, 167, 167);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;
+            border-radius: 80px;
+            background-color: rgb(41, 41, 41);
+            margin-right: 5px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .homeicon:hover {
+            background-color: rgb(68, 68, 68);
+        }
+
+        #applychanges {
+            margin-left: auto;
+            border: none;
+            height: 45px;
+            background-color: rgb(95, 138, 255);
+            border-radius: 300px;
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            width: 150px;
+        }
+
+        #applychanges:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .MainDividend {
+            width: 100%;
+            justify-content: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .SettingsSideBar {
+            width: 275px;
+            display: flex;
+            align-items: center;
+            height: 85vh;
+            flex-direction: column;
+            margin-left: 15px;
+            border-radius: 15px;
+            background-color: rgb(26, 26, 26);
+        }
+
+        .SettingsMainDiv {
+            width: 75%;
+            height: 85vh;
+            margin-left: 15px;
+            border-radius: 15px;
+            background-color: rgb(26, 26, 26);
+        }
+
+        .SettingsSideBar button {
+            width: 95%;
+            border: none;
+            background-color: rgb(34, 33, 33);
+            border-radius: 15px;
+            margin-top: 10px;
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            height: 45px;
+        }
     </style>
 </head>
 <body>
@@ -54,6 +128,21 @@
             </span>
         </div>
         <p class="SettingsText">Settings</p>
+        <button id="applychanges">Apply Changes</button>
+        <div class="homeicon" onclick="window.location.href='homepage.html'">
+            <span class="material-symbols-outlined">
+                home
+            </span>
+        </div>
     </div>
+
+    <div class="MainDividend">
+        <div class="SettingsSideBar">
+            <button>Proxy</button>
+            <button>Customize</button>
+            <button>Browser</button>
+        </div>
+        <div class="SettingsMainDiv"></div>
+    </div>  
 </body>
 </html>
