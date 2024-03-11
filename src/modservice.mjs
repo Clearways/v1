@@ -37,6 +37,12 @@ async function resetboot() {
     console.log(`✅ Reset Boot has been requested!\n----------------------------\n${data}`);
     await writeFile('./src/index.mjs', data);
     console.log('Data written to index.mjs successfully!');
+    const config = {
+      isRammerheadEnabled: false,
+      isNodeUnblockerEnabled: false
+    };
+    const jsonConfig = JSON.stringify(config, null, 2);
+    fs.writeFileSync('./public/config.json', jsonConfig, 'utf8');
   } catch (error) {
     console.error('Error reading or writing file:', error);
   }
@@ -60,6 +66,12 @@ async function OverrideRHBootSector() {
     console.log(`✅ Installing Rammerhead!\n----------------------------\n`);
     await writeFile('./src/index.mjs', data);
     console.log('Data written to index.mjs successfully!');
+    const config = {
+      isRammerheadEnabled: false,
+      isNodeUnblockerEnabled: false
+    };
+    const jsonConfig = JSON.stringify(config, null, 2);
+    fs.writeFileSync('./public/config.json', jsonConfig, 'utf8');
   } catch (error) {
     console.error('Error reading or writing file:', error);
   }
@@ -71,6 +83,12 @@ async function OverrideNUBootSector() {
     console.log(`✅ Installing NodeUnblocker!\n----------------------------\n`);
     await writeFile('./src/index.mjs', data);
     console.log('Data written to index.mjs successfully!');
+    const config = {
+      isRammerheadEnabled: false,
+      isNodeUnblockerEnabled: true
+    };
+    const jsonConfig = JSON.stringify(config, null, 2);
+    fs.writeFileSync('./public/config.json', jsonConfig, 'utf8');
   } catch (error) {
     console.error('Error reading or writing file:', error);
   }
