@@ -72,6 +72,19 @@
             const SessionID = localStorage.getItem('rh_default')
             document.getElementById('session-id').value = SessionID
         }
+
+        if (localStorage.getItem('rh_target_url')) {
+            if (localStorage.getItem('rh-default')) {
+                OverrideFunction();
+            } else {
+                CreateSession();
+            }
+
+            document.getElementById('session-url') = localStorage.getItem('rh_target_url');
+            setTimeout(() => {
+                document.getElementById('session-go').click();
+            }, 100);
+        }
     </script>
 </body>
 

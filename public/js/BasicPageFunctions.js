@@ -100,3 +100,18 @@ document.body.onload = function () {
     worker()
     tabModule.NewTab()
 }
+
+
+if (localStorage.getItem('Client-LastVisited')) {
+  //
+} else {
+  var basicConfig = { 
+    theme: "main.css",
+    proxy: "Ultraviolet",
+    search_engine: "https://google.com/search?q=%s",
+    Mode: "open"
+   };
+ 
+   var configString = JSON.stringify(basicConfig);
+   localStorage.setItem('Client-LastVisited', configString);
+}

@@ -154,6 +154,22 @@
         background-size: 100%;
          transition: background 0s;
         }
+
+        .TextLabelOffset {
+            margin-left: 10px;
+        }
+
+        select {
+            width: 450px;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            font-family: "Montserrat", sans-serif;
+            background-color: rgb(34, 34, 34);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -164,7 +180,7 @@
             </span>
         </div>
         <p class="SettingsText">Settings</p>
-        <button id="applychanges">Apply Changes</button>
+        <button id="applychanges" onclick="apply()">Apply Changes</button>
         <div class="homeicon" onclick="window.location.href='homepage.html'">
             <span class="material-symbols-outlined">
                 home
@@ -174,9 +190,9 @@
 
     <div class="MainDividend">
         <div class="SettingsSideBar">
-            <button>Proxy</button>
-            <button>Customize</button>
-            <button>Browser</button>
+            <button id="partyparty">Proxy</button>
+            <button id="lashawtydicerarirari">Customize</button>
+            <button id="semeolvidotuname">Browser</button>
         </div>
         <div class="SettingsMainDiv">
             <div class="Vertical" id="ProxySelection" style="display: flex; flex-direction: column;">
@@ -194,6 +210,35 @@
                 <button id="open">Open in Browser</button>
                 <button id="ab">Open in AB Cloak</button>
                 <button id="direct">Open Directly </button>
+                <input type="text" style="display: none;" id="OpenMethod">
+            </div>
+            <div class="Vertical" id="Customize" style="display: none; flex-direction: column;">
+                <h1 class="TextLabelOffset">Choose a theme</h1>
+                <div style="width: 400px; height: 5px; background-color: rgb(67, 67, 67); border-radius: 250px; margin-left: 5px;"></div>
+                <select id="themes">
+                    <option value="base.css">Default</option>
+                    <option value="light.css">Light Theme</option>
+                    <option value="fluidia.css">Fluidia</option>
+                    <option value="aria.css">Aria</option>
+                    <option value="seismetic.css">Seismetic</option>
+                  </select>
+            </div>
+
+            <div class="Vertical" id="Browser" style="display: none; flex-direction: column;">
+                <h1 class="TextLabelOffset">Browser Preferences</h1>
+                <div style="width: 400px; height: 5px; background-color: rgb(67, 67, 67); border-radius: 250px; margin-left: 5px;"></div>
+                <select id="searchengine">
+                    <option value="https://google.com/search?q=%s">Google</option>
+                    <option value="https://bing.com/search?q=%s">Bing</option>
+                    <option value="https://search.brave.com/search?q=%s">Brave Search</option>
+                    <option value="https://www.ecosia.org/search?method=index&q=%s">ecosia</option>
+                    <option value="https://oceanhero.today/web?q=%s">Ocean Hero</option>
+                    <option value="https://yandex.com/search/?text=%s">Yandex</option>
+                    <option value="https://www.qwant.com/?l=en&q=%s">Qwant</option>
+                    <option value="https://search.brave.com/search?q=%s">Brave</option>
+                    <option value="https://www.startpage.com/sp/search?q=%s">Startpage</option>
+                    <option value="https://www.dogpile.com/serp?q=%s">dogpile</option>
+                  </select>
             </div>
         </div>
     </div>  
