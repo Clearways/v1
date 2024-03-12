@@ -74,13 +74,25 @@
         }
 
         if (localStorage.getItem('rh_target_url')) {
-            if (localStorage.getItem('rh-default')) {
+            if (localStorage.getItem('rh_default')) {
                 OverrideFunction();
+
+                document.getElementById('session-url').value = localStorage.getItem('rh_target_url');
+            setTimeout(() => {
+                document.getElementById('session-go').click();
+            }, 100);
             } else {
-                CreateSession();
+                setTimeout(() => {
+                    CreateSession();
+
+                    document.getElementById('session-url').value = localStorage.getItem('rh_target_url');
+            setTimeout(() => {
+                document.getElementById('session-go').click();
+            }, 100);
+                }, 150);
             }
 
-            document.getElementById('session-url') = localStorage.getItem('rh_target_url');
+            document.getElementById('session-url').value = localStorage.getItem('rh_target_url');
             setTimeout(() => {
                 document.getElementById('session-go').click();
             }, 100);

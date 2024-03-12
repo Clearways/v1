@@ -107,7 +107,7 @@ if (localStorage.getItem('Client-LastVisited')) {
 } else {
   var basicConfig = { 
     theme: "main.css",
-    proxy: "Ultraviolet",
+    proxy: "uv",
     search_engine: "https://google.com/search?q=%s",
     Mode: "open"
    };
