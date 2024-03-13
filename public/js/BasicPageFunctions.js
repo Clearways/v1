@@ -97,8 +97,9 @@ document.getElementById('inspectelement').onclick = function () {
 
 
 document.body.onload = function () {
-    worker()
-    tabModule.NewTab()
+    worker();
+    RegisterDN();
+    tabModule.NewTab();
 }
 
 
@@ -114,4 +115,11 @@ if (localStorage.getItem('Client-LastVisited')) {
  
    var configString = JSON.stringify(basicConfig);
    localStorage.setItem('Client-LastVisited', configString);
+}
+
+
+function RegisterDN() {
+  navigator.serviceWorker.register("../dynamic-sw.js", {
+    scope: "/adventuring/"
+  });
 }

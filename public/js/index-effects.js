@@ -5,17 +5,21 @@ const Configuration = JSON.parse(localStorage.getItem('Client-LastVisited'))
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const url = search(address.value, Configuration.search_engine);
-  document.body.innerHTML = '';
 
   if (Configuration.Mode == 'open') {
     if (Configuration.proxy == 'uv') {
+      document.body.innerHTML = '';
       window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
     } else if(Configuration.proxy == 'Dynamic') {
-      window.location.href = __dn$config.prefix + __uv$config.encodeUrl(url);
+      RegisterDN()
+      window.location.href = __dynamic$config.prefix + Ultraviolet.codec.xor.encode(url);
+      document.body.innerHTML = '';
     } else if (Configuration.proxy == 'Rammerhead') {
+      document.body.innerHTML = '';
       localStorage.setItem('rh_target_url', url)
       window.location.href = 'rammerhead.html';
     } else if (Configuration.proxy == 'Node') {
+      document.body.innerHTML = '';
       window.location.href = `/webinstance/${url}`
     } else {
       const H1 = document.createElement('h1');
@@ -26,7 +30,8 @@ form.addEventListener("submit", async (event) => {
     if (Configuration.proxy == 'uv') {
       window.open(__uv$config.prefix + __uv$config.encodeUrl(url));
     } else if(Configuration.proxy == 'Dynamic') {
-      window.open(__dn$config.prefix + __uv$config.encodeUrl(url));
+      RegisterDN()
+      window.open(__dynamic$config.prefix + Ultraviolet.codec.xor.encode(url));
     } else if (Configuration.proxy == 'Rammerhead') {
       localStorage.setItem('rh_target_url', url)
       window.open('rammerhead.html');
@@ -46,3 +51,11 @@ form.addEventListener("submit", async (event) => {
     console.error('Invalidaiton')
   }
 });
+
+
+
+function RegisterDN() {
+  navigator.serviceWorker.register("../dynamic-sw.js", {
+    scope: "/adventuring/"
+  });
+}
