@@ -59,3 +59,19 @@ function RegisterDN() {
     scope: "/adventuring/"
   });
 }
+
+function FetchBare() {
+  fetch(__uv$config.bare)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+       document.getElementById('ColorStatus').style.backgroundColor = 'rgb(0, 255, 0)';
+      })
+      .catch(error => {
+        document.getElementById('ColorStatus').style.backgroundColor = 'rgb(255, 0, 0)';
+      });
+}
