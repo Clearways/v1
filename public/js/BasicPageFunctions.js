@@ -9,14 +9,16 @@ document.getElementById('TabHolder').onclick = function () {
 
 document.getElementById('refreshbutton').onclick = function () {
     const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);
-
     TabIframe.contentDocument.location.reload();
 }
 
-document.getElementById('homepage').onclick = function () {
-    const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);
-    TabIframe.src = 'homepage.html';
+function loadHomepage() {
+  const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);
+  TabIframe.src = 'homepage.html';
 }
+
+document.getElementById('homepage').onclick = loadHomepage;
+document.getElementById('QuickAccessHome').onclick = loadHomepage;
 
 document.getElementById('fullscreen').onclick = function () {
     const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);

@@ -390,8 +390,8 @@ border: 2px #373737 solid;
   display: flex;
   flex-direction: row;
   position: fixed;
-  bottom: 20px; /* Adjust this value to change the distance from the bottom */
-  right: 20px; /* Adjust this value to change the distance from the right */
+  bottom: 20px;
+  right: 20px;
 }
 
 .BareStatus p {
@@ -408,4 +408,27 @@ border: 2px #373737 solid;
   border-radius: 150px;
   margin-left: auto;
   margin-right: 15px;
+}
+
+.QuickHomeButton {
+  width: 45px;
+  background-color: rgb(23, 23, 23);
+  border-radius: 150px;
+  height: 45px;
+  display: none;
+  flex-direction: row;
+  position: fixed;
+  top: 5px;
+  justify-content: center;
+  align-items: center;
+  right: 5px;
+}
+
+.QuickHomeButton button {
+  border: none;
+  border-radius: 150px;
+  width: 38px;
+  height: 38px;
+  background-color: #282828;
+  color: white;
 }
