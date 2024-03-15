@@ -430,5 +430,6 @@ border: 2px #373737 solid;
   width: 38px;
   height: 38px;
   background-color: #282828;
-  color: white;
+  color: rgb(152, 152, 152);
+  font-weight: 150;
 }

@@ -1,28 +1,24 @@
 // Module Import //
 import { createBareServer } from 'bypass-bare';
 import http from 'node:http';
-import Unblocker from "unblocker";
 import express from 'express';
-import { hostname } from "node:os";
+import path from 'node:path';
 import { dynamicPath } from "@nebula-services/dynamic";
+import { hostname } from "node:os";
+import Unblocker from "unblocker";
 // Configuration //
 
 const FilePath = './public';
 const BareDirectory = '/acesspoint/';
+const __dirname = process.cwd();
 const DefaultPort = 8080;
 
 const httpServer = http.createServer();
 const app = express();
 
-app.post('/configuration/', (req, res) => {
-	res.send('config.json')
-  });
-
 app.use(express.static(FilePath));
-app.use("/config/", express.static('config.json'));
-app.use(express.static(FilePath));
-var unblocker = new Unblocker({prefix: '/webinstance/'});
 app.use("/dynamic/", express.static(dynamicPath));
+var unblocker = new Unblocker({prefix: '/webinstance/'});
 app.use(unblocker);
 const bareServer = createBareServer(BareDirectory);
 
@@ -32,6 +28,17 @@ httpServer.on('request', (req, res) => {
 	} else {
 		app(req, res);
 	}
+});
+
+const routing = [
+    { path: '/about', file: 'games.html' },
+	{ path: '/blog', file: 'apps.html' }
+  ];
+
+  routing.forEach((route) => {
+    app.get(route.path, (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', route.file));
+    });
 });
 
 httpServer.on('upgrade', (req, socket, head) => {

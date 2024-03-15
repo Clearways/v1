@@ -3,6 +3,7 @@ import { createBareServer } from 'bypass-bare';
 import http from 'node:http';
 import express from 'express';
 import createRammerhead from "rammerhead/src/server/index.js";
+import path from 'node:path';
 import { fileURLToPath } from "node:url";
 import { dynamicPath } from "@nebula-services/dynamic";
 import { hostname } from "node:os";
@@ -54,14 +55,20 @@ app.use((req, res, next) => {
 
 
 const httpServer = http.createServer();
-
-app.post('/configuration/', (req, res) => {
-	res.send('config.json')
-  });
-
 app.use(express.static(FilePath));
 app.use("/dynamic/", express.static(dynamicPath));
 const bareServer = createBareServer(BareDirectory);
+
+const routing = [
+    { path: '/about', file: 'games.html' },
+	{ path: '/blog', file: 'apps.html' }
+  ];
+
+  routing.forEach((route) => {
+    app.get(route.path, (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', route.file));
+    });
+});
 
 httpServer.on('request', (req, res) => {
 	if (bareServer.shouldRoute(req)) {

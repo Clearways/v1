@@ -9,3 +9,7 @@ function blow() {
 function ReplaceURL(base) {
     document.getElementById('searchway_input').value = base
 }
+
+function ShowHome() {
+    document.getElementById('QuickHomeButton').style.display = 'flex';
+}

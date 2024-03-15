@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <title>New Tab Part 2</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url("../build/images/waves.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .BigBar {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 5px;
+        }
+
+        .BigBar button {
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            background-color: rgb(19, 19, 19);
+            border: none;
+            width: 135px;
+            height: 45px;
+            border-radius: 8px;
+        }
+
+        .BigBar button:hover {
+            color: rgb(75, 75, 75);
+        }
+
+        #ga-search-bar {
+            width: 375px;
+            background-color: rgb(24, 24, 24);
+            height: 45px;
+            border: none;
+            border-radius: 100px;
+            font-family: "Montserrat", sans-serif;
+            text-align: center;
+            color: white;
+        }
+
+        #ga-search-bar:active {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="BigBar">
+        <button><span class="fa-solid fa-house"></span>Home</button>
+        <button><span class="fa-solid fa-gamepad"></span>Games</button>
+        <button><span class="fa-brands fa-app-store-ios"></span>Apps</button>
+        <button><span class="fa-solid fa-gears"></span>Settings</button>
+    </div>
+    <h1>Games</h1>
+    <input id="ga-search-bar" type="text" placeholder="🔎 Search Game Library">
+</body>
+</html>
