@@ -14,6 +14,7 @@ const FilePath = './public';
 const BareDirectory = '/acesspoint/';
 const DefaultPort = 8080;
 const app = express();
+const __dirname = process.cwd();
 const rh = createRammerhead();
 
 const rammerheadScopes = [
