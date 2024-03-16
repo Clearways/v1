@@ -1,6 +1,6 @@
 {
   "name": "v1",
-  "version": "1.0.4-canary",
+  "version": "1.0.5-release",
   "description": "The first version of the Clear Proxy",
   "main": "index.js",
   "scripts": {

@@ -29,7 +29,7 @@ httpServer.on('request', (req, res) => {
 
 const routing = [
     { path: '/about', file: 'games.html' },
-	{ path: '/blog', file: 'apps.html' }
+	  { path: '/blog', file: 'apps.html' }
   ];
 
   routing.forEach((route) => {

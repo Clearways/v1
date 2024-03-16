@@ -433,3 +433,23 @@ border: 2px #373737 solid;
   color: rgb(152, 152, 152);
   font-weight: 150;
 }
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background-color: #121212;
+  border-radius: 15px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #373737; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(111, 111, 111); 
+}

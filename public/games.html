@@ -2,7 +2,7 @@
 <head>
     <title>New Tab Part 2</title>
     <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         body {
             color: white;
@@ -18,7 +18,7 @@
             width: 100%;
             height: 50px;
             display: flex;
-            justify-content: center;
+            justify-content: right;
             align-items: center;
             flex-direction: row;
             gap: 5px;
@@ -31,7 +31,15 @@
             border: none;
             width: 135px;
             height: 45px;
+            display: flex;
+            justify-self: center;
+            gap: 3px;
+            align-items: center;
             border-radius: 8px;
+        }
+
+        .BigBar span {
+            font-weight: 100;
         }
 
         .BigBar button:hover {
@@ -52,16 +60,73 @@
         #ga-search-bar:active {
             outline: none;
         }
+
+        .HolderDiv {
+            width: 100%;
+            display: flex;
+            overflow-y: scroll;
+            gap: 5px;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .App {
+            width: 145px;
+            height: 200px;
+            margin-top: 5px;
+            border-radius: 7px;
+            background-color: rgb(21, 21, 21);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .App img {
+            width: 115px;
+            background-color: rgb(26, 26, 26);
+            border: 5px solid rgb(26, 26, 26);
+            height: 115px;
+            margin-top: 5px;
+            user-select: none;
+            -webkit-user-drag: none;
+            border-radius: 8px;
+        }
+
+        .App p {
+            text-align: center;
+        }
+
+        .App:hover {
+            border: 2px solid rgb(42, 42, 42);
+        }
     </style>
 </head>
 <body>
     <div class="BigBar">
-        <button><span class="fa-solid fa-house"></span>Home</button>
-        <button><span class="fa-solid fa-gamepad"></span>Games</button>
-        <button><span class="fa-brands fa-app-store-ios"></span>Apps</button>
-        <button><span class="fa-solid fa-gears"></span>Settings</button>
+        <button id="Home"><span class="material-symbols-outlined">
+            home
+            </span>Home</button>
+        <button id="gs"><span class="material-symbols-outlined">
+            videogame_asset
+            </span>Games</button>
+        <button id="apps"><span class="material-symbols-outlined">
+            apps
+            </span>Apps</button>
+        <button id="settings"><span class="material-symbols-outlined">
+            settings
+            </span>Settings</button>
     </div>
     <h1>Games</h1>
     <input id="ga-search-bar" type="text" placeholder="🔎 Search Game Library">
+    <div class="HolderDiv" id="Holder">
+    </div>
+    <script src="js/PageRoutes.js"></script>
+    <script src="js/search-module.js"></script>
+    <script src="build/bundle.js" defer></script>
+    <script src="build/config.js" defer></script>
+    <script src="js/game-module.js" clear-module="true"></script>
 </body>
 </html>

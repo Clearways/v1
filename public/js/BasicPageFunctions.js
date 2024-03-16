@@ -15,6 +15,7 @@ document.getElementById('refreshbutton').onclick = function () {
 function loadHomepage() {
   const TabIframe = document.getElementById(`${tabModule.ReturnTab()}_iframe`);
   TabIframe.src = 'homepage.html';
+  document.getElementById('QuickHomeButton').style.display = 'none';
 }
 
 document.getElementById('homepage').onclick = loadHomepage;
